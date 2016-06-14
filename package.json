@@ -1,7 +1,7 @@
 {
-  "name": "balm-admin",
+  "name": "balm-vue",
   "version": "1.0.0",
-  "description": "The balm demo for admin project",
+  "description": "The balm demo for vue project",
   "scripts": {
     "preinstall": "bower install",
     "dev": "gulp",
@@ -9,25 +9,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/balmjs/balm-admin.git"
+    "url": "git+https://github.com/balmjs/balm-vue.git"
   },
   "keywords": [],
   "author": "Elf-mousE",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/balmjs/balm-admin/issues"
+    "url": "https://github.com/balmjs/balm-vue/issues"
   },
-  "homepage": "https://github.com/balmjs/balm-admin#readme",
+  "homepage": "https://github.com/balmjs/balm-vue#readme",
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.9.0",
     "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-2": "^6.5.0",
     "babel-runtime": "^6.9.2",
-    "balm": "^0.2.4",
+    "balm": "^0.3.0-beta2",
     "gulp": "^3.9.1",
     "vue-html-loader": "^1.2.2",
     "vue-loader": "^8.5.2",
-    "vue-resource": "^0.7.4",
-    "vue-router": "^0.7.13",
     "vue-style-loader": "^1.0.0"
   }
 }

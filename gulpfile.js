@@ -13,12 +13,11 @@ balm.config = {
     }
   },
   scripts: {
-    loaders: [
-      {
-        test: /\.vue$/,
-        loader: 'vue'
-      }
-    ]
+    loaders: [{
+      test: /\.vue$/,
+      loader: 'vue'
+    }],
+    extensions: ['.vue']
   }
 };
 

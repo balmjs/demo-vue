@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import App from './app.vue'
+import App from './app'
 
-import Dashboard from './admin/dashboard.vue'
-import User from './admin/user.vue'
-import UserList from './admin/user-list.vue'
-import UserDetail from './admin/user-detail.vue'
+import Dashboard from './admin/dashboard'
+import User from './admin/user'
+import UserList from './admin/user-list'
+import UserDetail from './admin/user-detail'
 
 Vue.use(Router)
 
@@ -23,11 +23,11 @@ router.map({
     component: User,
     subRoutes: {
       '/': {
-        name: 'user-list',
+        name: 'user.list',
         component: UserList
       },
       '/detail/:id': {
-        name: 'user-detail',
+        name: 'user.detail',
         component: UserDetail
       }
     }
