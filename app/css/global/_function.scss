@@ -1,0 +1,10 @@
+@function getImgUrl($file) {
+  $folder: '';
+  @if $debug {
+    $folder: 'img'; // for development
+  }
+  @else {
+    $folder: 'img'; // for production
+  }
+  @return $imageBasePath + $folder + '/' + $file;
+}

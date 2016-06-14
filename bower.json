@@ -1,0 +1,21 @@
+{
+  "name": "balm-admin",
+  "private": true,
+  "dependencies": {
+    "normalize-css": "normalize.css#^4.1.1",
+    "bourbon": "^4.2.7",
+    "neat": "^1.7.4",
+    "font-awesome": "^4.6.3",
+    "vue": "^1.0.24",
+    "jquery": "^3.0.0"
+  },
+  "overrides": {
+    "font-awesome": {
+      "main": [
+        "fonts/*",
+        "less/font-awesome.less",
+        "scss/font-awesome.scss"
+      ]
+    }
+  }
+}

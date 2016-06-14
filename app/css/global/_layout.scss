@@ -1,0 +1,20 @@
+html,
+body {
+  height: 100%;
+}
+
+.container {
+  height: auto;
+  min-height: 100%;
+}
+
+.flexbox-parent {
+  @include align-items(stretch);
+  @include display(flex);
+  @include flex-direction(row);
+  @include justify-content(flex-start);
+}
+
+.flexbox-parent > .flexbox-child {
+  @include flex(1);
+}
