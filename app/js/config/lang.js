@@ -3,7 +3,7 @@ import cn from '../lang/cn.json';
 
 const lang = [{
   key: 'en',
-  value: '英文'
+  value: 'English'
 }, {
   key: 'cn',
   value: '中文'

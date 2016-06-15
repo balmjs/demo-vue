@@ -1,5 +1,11 @@
 {
   "message": {
-    "hello": "Hello"
+    "hello": "Hello",
+    "settings": "Settings",
+    "exit": "Exit"
+  },
+  "menu": {
+    "dashboard": "Dashboard",
+    "userlist": "User List"
   }
 }

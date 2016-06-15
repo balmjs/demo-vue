@@ -1,5 +1,11 @@
 {
   "message": {
-    "hello": "你好"
+    "hello": "你好",
+    "settings": "设置",
+    "exit": "退出"
+  },
+  "menu": {
+    "dashboard": "首页",
+    "userlist": "用户列表"
   }
 }

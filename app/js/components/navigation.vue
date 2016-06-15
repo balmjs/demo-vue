@@ -3,14 +3,14 @@
     <header class="profile">
       <figure>
         <img class="avatar" :src="user.avatar" :alt="user.name">
-        <figcaption class="username">{{ $t("message.hello") }}, <span>{{ user.name }}</span>!</figcaption>
+        <figcaption class="username">{{ $t('message.hello') }}, <span>{{ user.name }}</span>!</figcaption>
       </figure>
-      <p><a href="#">设置</a> | <a href="#">退出</a></p>
+      <p><a href="#">{{ $t('message.settings') }}</a> | <a href="#">{{ $t('message.exit') }}</a></p>
     </header>
     <div class="menu">
       <ul>
         <li v-for="menu in menus" :class="{'active': menu==activeMenu}" @click="switchMenu(menu)">
-            <a v-link="menu.state">{{menu.name}}</a>
+            <a v-link="menu.state">{{ $t(menu.name) }}</a>
         </li>
       </ul>
     </div>
@@ -32,8 +32,8 @@ export default {
         name: 'Alice'
       },
       menus: [
-        {name: 'Dashboard', state: '/dashboard'},
-        {name: 'UserList', state: '/user'}
+        {name: 'menu.dashboard', state: '/dashboard'},
+        {name: 'menu.userlist', state: '/user'}
       ],
       activeMenu: null
     }
