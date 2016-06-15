@@ -2,30 +2,33 @@
   <nav class="flexbox-child navigation">
     <header class="profile">
       <figure>
-        <!-- <img src="{{user.avatar}}" alt="{{user.name}}"> -->
-        <figcaption>Hello, <span>{{user.name}}</span>!</figcaption>
+        <img class="avatar" :src="user.avatar" :alt="user.name">
+        <figcaption class="username">{{ $t("message.hello") }}, <span>{{ user.name }}</span>!</figcaption>
       </figure>
       <p><a href="#">设置</a> | <a href="#">退出</a></p>
     </header>
     <div class="menu">
       <ul>
-        <li v-for="menu in menus" @click="switchMenu(menu)">
-            <a :class="{'active': menu==activeMenu}" v-link="menu.state">{{menu.name}}</a>
+        <li v-for="menu in menus" :class="{'active': menu==activeMenu}" @click="switchMenu(menu)">
+            <a v-link="menu.state">{{menu.name}}</a>
         </li>
       </ul>
     </div>
-    <footer>
-      中文 | 英文
+    <footer class="lang">
+      <a href="javascript:void(0)" @click="switchLang(lang[1]['key'])">{{ lang[1]['value'] }}</a> | <a href="javascript:void(0)" @click="switchLang(lang[0]['key'])">{{ lang[0]['value'] }}</a>
     </footer>
   </nav>
 </template>
 
 <script>
+import { lang } from '../config/lang';
+
 export default {
   data () {
     return {
+      lang: lang,
       user: {
-        avatar: '',
+        avatar: '../img/logo.png',
         name: 'Alice'
       },
       menus: [
@@ -36,8 +39,11 @@ export default {
     }
   },
   methods: {
-    switchMenu (menu) {
+    switchMenu(menu) {
       this.activeMenu = menu
+    },
+    switchLang(lang) {
+      this.$lang.lang = lang;
     }
   },
   ready () {
@@ -45,63 +51,3 @@ export default {
   }
 }
 </script>
-
-<style>
-nav {
-    max-width: 250px;
-    background: #3b4854;
-}
-nav header {
-    position: relative;
-    height: 80px;
-    padding: 20px 0 0 15px;
-    font-size: 16px;
-    color: #fff;
-    border-bottom: 1px solid #465563;
-    background: #303b45;
-}
-nav header span {
-    position: relative;
-    display: inline-block;
-    width: 36px;
-    height: 36px;
-    margin: 0 10px 0 0;
-    vertical-align: middle;
-    border: 1px solid #fff;
-}
-nav header span::before {
-    content: '\f007';
-    font: normal 20px FontAwesome;
-    top: 7px;
-    left: 9px;
-}
-nav header a::before {
-    content: '\f08b';
-    font: normal 20px FontAwesome;
-    top: 28px;
-    right: 15px;
-}
-nav ul span {
-    display: block;
-    padding: 15px;
-    color: rgba(255, 255, 255, 0.5);
-    text-transform: uppercase;
-    border-bottom: 1px solid #465563;
-}
-nav ul a {
-    position: relative;
-    display: block;
-    padding: 15px 15px 17px 50px;
-    color: #fff;
-    border-bottom: 1px solid #465563;
-}
-nav ul a:hover,
-nav ul a.active {
-    background: #576674;
-}
-nav ul a::before {
-    content: '\f08b';
-    font: normal 16px FontAwesome;
-    left: 20px;
-}
-</style>

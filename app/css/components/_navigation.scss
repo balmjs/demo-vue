@@ -1,1 +1,50 @@
-.navigation {}
+.navigation {
+  position: relative;
+  max-width: 250px;
+  color: white;
+  background: #23282d;
+  a {
+    color: white;
+    &:hover {
+      color: #00b9eb;
+    }
+  }
+  // header
+  .profile {
+    margin: 50px 0;
+    text-align: center;
+  }
+  .avatar {
+    width: 88px;
+    height: 88px;
+    border: 1px solid;
+    border-radius: 50%;
+    @include transition(all .4s ease);
+    &:hover {
+      box-shadow: 0 0 8px white;
+    }
+  }
+  .username {
+    margin: 10px 0;
+  }
+  // menu
+  .menu {
+    li {
+      a {
+        display: block;
+        padding: 20px;
+      }
+      &.active {
+        background-color: #32373c;
+      }
+    }
+  }
+  // footer
+  .lang {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    left: 0;
+    text-align: center;
+  }
+}
