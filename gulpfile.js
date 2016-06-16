@@ -7,9 +7,9 @@ balm.config = {
   },
   paths: {
     source: {
-      css: '/css',
-      js: '/js',
-      img: '/img'
+      css: 'css',
+      js: 'js',
+      img: 'img'
     }
   },
   scripts: {
