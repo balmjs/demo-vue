@@ -10,7 +10,7 @@
     <div class="menu">
       <ul>
         <li v-for="menu in menus" :class="{'active': menu==activeMenu}" @click="switchMenu(menu)">
-            <a v-link="menu.state">{{ $t(menu.name) }}</a>
+            <a v-link="menu.state"><i class="fa fa-2x {{ menu.icon }}"></i><span>{{ $t(menu.name) }}</span></a>
         </li>
       </ul>
     </div>
@@ -32,8 +32,8 @@ export default {
         name: 'Alice'
       },
       menus: [
-        {name: 'menu.dashboard', state: '/dashboard'},
-        {name: 'menu.userlist', state: '/user'}
+        {name: 'menu.dashboard', state: '/dashboard', 'icon': 'fa-home'},
+        {name: 'menu.userlist', state: '/user', 'icon': 'fa-user'}
       ],
       activeMenu: null
     }

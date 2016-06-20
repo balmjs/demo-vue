@@ -33,6 +33,14 @@
       a {
         display: block;
         padding: 20px;
+        i,
+        span {
+          vertical-align: middle;
+        }
+        i {
+          width: 30px;
+          margin-right: 10px;
+        }
       }
       &.active {
         background-color: #32373c;
