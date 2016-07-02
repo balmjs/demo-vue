@@ -3,11 +3,6 @@ import VueRouter from 'vue-router'
 import VueI18n from 'vue-i18n'
 import App from './app'
 
-import Dashboard from './admin/dashboard'
-import User from './admin/user'
-import UserList from './admin/user-list'
-import UserDetail from './admin/user-detail'
-
 Vue.use(VueRouter)
 Vue.use(VueI18n)
 
@@ -18,40 +13,52 @@ import { locales } from './config/lang'
 Vue.config.lang = 'en'
 
 // set locales
-Object.keys(locales).forEach(function (lang) {
+Object.keys(locales).forEach(lang => {
   Vue.locale(lang, locales[lang])
 })
 
-let router = new VueRouter()
+let router = new VueRouter({
+  hashbang: false
+})
 
 router.map({
   '/login': {
-    component: Dashboard
+    component: resolve => {
+      require(['./admin/dashboard'], resolve)
+    }
   },
   '/dashboard': {
-    component: Dashboard
+    component: resolve => {
+      require(['./admin/dashboard'], resolve)
+    }
   },
   '/user': {
     name: 'user',
-    component: User,
+    component: resolve => {
+      require(['./admin/user'], resolve)
+    },
     subRoutes: {
       '/': {
         name: 'user.list',
-        component: UserList
+        component: resolve => {
+          require(['./admin/user-list'], resolve)
+        }
       },
       '/detail/:id': {
         name: 'user.detail',
-        component: UserDetail
+        component: resolve => {
+          require(['./admin/user-detail'], resolve)
+        }
       }
     }
   }
 })
 
-router.beforeEach(function () {
+router.beforeEach(() => {
   window.scrollTo(0, 0)
 })
 
-router.afterEach(function (transition) {
+router.afterEach(transition => {
   console.log(transition.to)
 })
 

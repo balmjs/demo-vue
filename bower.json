@@ -1,15 +1,15 @@
 {
-  "name": "balm-admin",
+  "name": "balm-vue",
   "private": true,
   "dependencies": {
-    "normalize-css": "normalize.css#^4.1.1",
+    "normalize-css": "^4.2.0",
     "bourbon": "^4.2.7",
-    "neat": "^1.7.4",
+    "neat": "^1.8.0",
     "font-awesome": "^4.6.3",
     "jquery": "^3.0.0",
-    "vue": "^1.0.24",
+    "vue": "^1.0.26",
     "vue-router": "^0.7.13",
-    "vue-resource": "^0.7.4",
+    "vue-resource": "^0.9.3",
     "vue-i18n": "^4.0.1"
   },
   "overrides": {
