@@ -2,7 +2,7 @@ var balm = require('balm');
 
 balm.config = {
   // cache: true,
-  static: 'async',
+  static: true,
   roots: {
     source: 'app'
   },
