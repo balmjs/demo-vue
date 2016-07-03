@@ -14,6 +14,11 @@ balm.config = {
     }
   },
   scripts: {
+    entry: {
+      common: ['vue', 'vue-router', 'vue-resource', 'vue-i18n'],
+      main: './app/js/main.js'
+    },
+    vendors: ['common'],
     // chunkFilename: '[chunkhash].js',
     loaders: [{
       test: /\.vue$/,
