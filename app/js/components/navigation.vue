@@ -25,6 +25,14 @@ import { lang } from '../config/lang';
 
 export default {
   data () {
+    let menus = [];
+    this.$http.get('/data/menu.json').then((response) => {
+        // success callback
+        console.log(response);
+    }, (response) => {
+        // error callback
+    });
+
     return {
       lang: lang,
       user: {
@@ -40,14 +48,14 @@ export default {
   },
   methods: {
     switchMenu(menu) {
-      this.activeMenu = menu
+      this.activeMenu = menu;
     },
     switchLang(lang) {
       this.$lang.lang = lang;
     }
   },
   ready () {
-    this.activeMenu = this.menus[0]
+    this.activeMenu = this.menus[0];
   }
-}
+};
 </script>

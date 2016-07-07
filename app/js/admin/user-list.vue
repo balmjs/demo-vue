@@ -35,8 +35,8 @@ export default {
   },
   methods: {
     getUrl (userId) {
-      return '/user/detail/' + userId
+      return '/user/detail/' + userId;
     }
   }
-}
+};
 </script>

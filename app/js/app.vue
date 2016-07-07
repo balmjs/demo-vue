@@ -6,13 +6,13 @@
 </template>
 
 <script>
-import Navigation from './components/navigation'
-import Container from './components/container'
+import Navigation from './components/navigation';
+import Container from './components/container';
 
 export default {
   components: {
     Navigation,
     Container
   }
-}
+};
 </script>
