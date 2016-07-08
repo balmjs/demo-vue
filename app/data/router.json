@@ -1,0 +1,22 @@
+[{
+  "url": "/login",
+  "name": "login",
+  "component": "dashboard"
+}, {
+  "url": "/dashboard",
+  "name": "dashboard",
+  "component": "dashboard"
+}, {
+  "url": "/user",
+  "name": "user",
+  "component": "user",
+  "subRoutes": [{
+    "url": "/",
+    "name": "user",
+    "component": "user-list"
+  }, {
+    "url": "/detail/:id",
+    "name": "user",
+    "component": "user-detail"
+  }]
+}]

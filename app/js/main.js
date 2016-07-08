@@ -23,38 +23,72 @@ let router = new VueRouter({
   hashbang: false
 });
 
-router.map({
-  '/login': {
-    component: resolve => {
-      require(['./admin/dashboard'], resolve);
-    }
-  },
-  '/dashboard': {
-    component: resolve => {
-      require(['./admin/dashboard'], resolve);
-    }
-  },
-  '/user': {
-    name: 'user',
-    component: resolve => {
-      require(['./admin/user'], resolve);
-    },
-    subRoutes: {
-      '/': {
-        name: 'user.list',
+let useBackendRouter = true;
+
+if (useBackendRouter) {
+  Vue.http.get('/data/router.json').then(response => {
+    // success callback
+    let routerMap = {};
+    for (let value1 of response.json()) {
+      routerMap[value1.url] = {
+        name: value1.name,
         component: resolve => {
-          require(['./admin/user-list'], resolve);
+          require(['./admin/' + value1.component], resolve);
         }
-      },
-      '/detail/:id': {
-        name: 'user.detail',
-        component: resolve => {
-          require(['./admin/user-detail'], resolve);
+      };
+      if (typeof value1.subRoutes !== 'undefined') {
+        routerMap[value1.url].subRoutes = {};
+        for (let value2 of value1.subRoutes) {
+          routerMap[value1.url].subRoutes[value2.url] = {
+            name: value2.name,
+            component: resolve => {
+              require(['./admin/' + value2.component], resolve);
+            }
+          };
         }
       }
     }
-  }
-});
+
+    router.map(routerMap);
+  }, response => {
+    // error callback
+  });
+} else {
+  router.map({
+    '/login': {
+      name: 'login',
+      component: resolve => {
+        require(['./admin/dashboard'], resolve);
+      }
+    },
+    '/dashboard': {
+      name: 'dashboard',
+      component: resolve => {
+        require(['./admin/dashboard'], resolve);
+      }
+    },
+    '/user': {
+      name: 'user',
+      component: resolve => {
+        require(['./admin/user'], resolve);
+      },
+      subRoutes: {
+        '/': {
+          name: 'user.list',
+          component: resolve => {
+            require(['./admin/user-list'], resolve);
+          }
+        },
+        '/detail/:id': {
+          name: 'user.detail',
+          component: resolve => {
+            require(['./admin/user-detail'], resolve);
+          }
+        }
+      }
+    }
+  });
+}
 
 router.beforeEach(() => {
   window.scrollTo(0, 0);

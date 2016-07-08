@@ -1,0 +1,9 @@
+[{
+  "name": "menu.dashboard",
+  "state": "/dashboard",
+  "icon": "fa-home"
+}, {
+  "name": "menu.userlist",
+  "state": "/user",
+  "icon": "fa-user"
+}]
