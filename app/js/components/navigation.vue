@@ -22,27 +22,17 @@
 
 <script>
 import { lang } from '../config/lang';
+import api from '../config/api';
 
 export default {
   data () {
-    let menus = [];
-    this.$http.get('/data/menu.json').then((response) => {
-        // success callback
-        console.log(response);
-    }, (response) => {
-        // error callback
-    });
-
     return {
       lang: lang,
       user: {
         avatar: '../img/logo.png',
         name: 'Alice'
       },
-      menus: [
-        {name: 'menu.dashboard', state: '/dashboard', 'icon': 'fa-home'},
-        {name: 'menu.userlist', state: '/user', 'icon': 'fa-user'}
-      ],
+      menus: this.menus,
       activeMenu: null
     }
   },
@@ -55,6 +45,14 @@ export default {
     }
   },
   ready () {
+    this.menus = [];
+    this.$http.get(api.global.getMenu).then(response => {
+        // success callback
+        this.menus = response.json();
+    }, response => {
+        // error callback
+    });
+
     this.activeMenu = this.menus[0];
   }
 };

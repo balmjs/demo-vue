@@ -2,41 +2,30 @@
   <div>
     用户列表
     <ul>
-      <li v-for="user in userlist">
-        <a v-link="getUrl(user.id)">{{user.name}}</a>
+      <li v-for="user in users">
+        <a v-link="user.url">{{user.name}}</a>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import api from '../config/api';
+
 export default {
   data () {
     return {
-      userlist: [
-        {
-          id: 1,
-          name: '用户-甲'
-        },
-        {
-          id: 2,
-          name: '用户-乙'
-        },
-        {
-          id: 3,
-          name: '用户-丙'
-        },
-        {
-          id: 4,
-          name: '用户-丁'
-        }
-      ]
+      users: this.users
     }
   },
-  methods: {
-    getUrl (userId) {
-      return '/user/detail/' + userId;
-    }
+  ready() {
+    this.users = [];
+    this.$http.get(api.user.getList).then(response => {
+        // success callback
+        this.users = response.json();
+    }, response => {
+        // error callback
+    });
   }
 };
 </script>

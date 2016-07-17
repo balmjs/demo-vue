@@ -1,0 +1,17 @@
+[{
+  "id": 1,
+  "name": "路人甲",
+  "url": "/user/detail/1"
+}, {
+  "id": 2,
+  "name": "路人乙",
+  "url": "/user/detail/2"
+}, {
+  "id": 3,
+  "name": "路人丙",
+  "url": "/user/detail/3"
+}, {
+  "id": 4,
+  "name": "路人丁",
+  "url": "/user/detail/4"
+}]
