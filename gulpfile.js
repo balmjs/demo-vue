@@ -28,4 +28,8 @@ balm.config = {
   }
 };
 
-balm.go();
+balm.go(function(mix) {
+  if (balm.config.production) {
+    mix.copy('./app/data/*', './dist/data');
+  }
+});
