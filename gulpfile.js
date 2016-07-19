@@ -1,7 +1,6 @@
 var balm = require('balm');
 
 balm.config = {
-  // cache: true,
   static: true,
   roots: {
     source: 'app'
@@ -19,7 +18,6 @@ balm.config = {
       main: './app/js/main.js'
     },
     vendors: ['common'],
-    // chunkFilename: '[chunkhash].js',
     loaders: [{
       test: /\.vue$/,
       loader: 'vue'
