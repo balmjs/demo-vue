@@ -12,6 +12,9 @@ balm.config = {
       img: 'img'
     }
   },
+  styles: {
+    ext: 'scss'
+  },
   scripts: {
     entry: {
       common: ['vue', 'vue-router', 'vue-resource', 'vue-i18n'],
