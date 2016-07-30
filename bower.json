@@ -2,7 +2,6 @@
   "name": "balm-vue",
   "private": true,
   "dependencies": {
-    "normalize-css": "^4.2.0",
     "bourbon": "^4.2.7",
     "neat": "^1.8.0",
     "font-awesome": "^4.6.3",
