@@ -1,7 +1,6 @@
 var balm = require('balm');
 
 balm.config = {
-  static: true,
   roots: {
     source: 'app'
   },
