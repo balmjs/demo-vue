@@ -29,7 +29,7 @@ export default {
     return {
       lang: lang,
       user: {
-        avatar: '../img/logo.png',
+        avatar: require('assets/logo.png'),
         name: 'Alice'
       },
       menus: this.menus,

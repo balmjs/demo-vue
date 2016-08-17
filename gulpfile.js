@@ -7,8 +7,7 @@ balm.config = {
   paths: {
     source: {
       css: 'css',
-      js: 'js',
-      img: 'img'
+      js: 'js'
     }
   },
   styles: {
@@ -23,9 +22,9 @@ balm.config = {
     loaders: [{
       test: /\.vue$/,
       loader: 'vue'
-    }],
-    extensions: ['.vue']
-  }
+    }]
+  },
+  cache: true
 };
 
 balm.go(function(mix) {

@@ -4,6 +4,8 @@
     <ul>
       <li v-for="user in users">
         <a v-link="user.url">{{user.name}}</a>
+        <i class="fa fa-edit" @click="onEdit($index)"></i>
+        <i class="fa fa-remove" @click="onDelete($index)"></i>
       </li>
     </ul>
   </div>
@@ -15,7 +17,21 @@ import api from '../config/api';
 export default {
   data () {
     return {
+      curIndex: -1,
+      curData: {},
       users: this.users
+    }
+  },
+  methods: {
+    onEdit(index) {
+      this.curIndex = index;
+      this.curData = this.users[index];
+      // after save
+      this.users[index].name = this.curData.name + ' updated';
+    },
+    onDelete(index) {
+      // after confirm
+      this.users.splice(index, 1);
     }
   },
   ready() {
