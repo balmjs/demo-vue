@@ -13,12 +13,12 @@ a {
 }
 
 .flexbox-parent {
-  @include align-items(stretch);
-  @include display(flex);
-  @include flex-direction(row);
-  @include justify-content(flex-start);
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
 }
 
 .flexbox-parent > .flexbox-child {
-  @include flex(1);
+  flex: 1;
 }

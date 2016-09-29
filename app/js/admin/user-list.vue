@@ -1,11 +1,11 @@
 <template>
   <div>
-    用户列表
+    <h4>用户列表</h4>
     <ul>
       <li v-for="user in users">
         <a v-link="user.url">{{user.name}}</a>
-        <i class="fa fa-edit" @click="onEdit($index)"></i>
-        <i class="fa fa-remove" @click="onDelete($index)"></i>
+        <i class="fa fa-edit" @click="onEdit($index)">编辑</i>
+        <i class="fa fa-remove" @click="onDelete($index)">删除</i>
       </li>
     </ul>
   </div>
@@ -22,6 +22,12 @@ export default {
       users: this.users
     }
   },
+  async created () {
+    this.users = [];
+
+    let response = await this.$http.get(api.user.getList);
+    this.users = response.body;
+  },
   methods: {
     onEdit(index) {
       this.curIndex = index;
@@ -33,15 +39,6 @@ export default {
       // after confirm
       this.users.splice(index, 1);
     }
-  },
-  ready() {
-    this.users = [];
-    this.$http.get(api.user.getList).then(response => {
-        // success callback
-        this.users = response.json();
-    }, response => {
-        // error callback
-    });
   }
 };
 </script>

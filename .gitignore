@@ -1,5 +1,7 @@
-node_modules
-dist
-./assets
+.DS_Store
+node_modules/
+dist/
+npm-debug.log
+selenium-debug.log
 .tmp
-bower_components
+./assets

@@ -10,7 +10,7 @@
     <div class="menu">
       <ul>
         <li v-for="menu in menus" :class="{'active': menu==activeMenu}" @click="switchMenu(menu)">
-            <a v-link="menu.state"><i class="fa fa-2x {{ menu.icon }}"></i><span>{{ $t(menu.name) }}</span></a>
+            <a v-link="menu.state">{{ $t(menu.name) }}</a>
         </li>
       </ul>
     </div>
@@ -36,24 +36,21 @@ export default {
       activeMenu: null
     }
   },
+  async created () {
+    this.menus = [];
+
+    let response = await this.$http.get(api.global.getMenu);
+    this.menus = response.body;
+
+    this.activeMenu = this.menus[0];
+  },
   methods: {
     switchMenu(menu) {
       this.activeMenu = menu;
     },
     switchLang(lang) {
-      this.$lang.lang = lang;
+      this.$root.$lang.lang = lang;
     }
-  },
-  ready () {
-    this.menus = [];
-    this.$http.get(api.global.getMenu).then(response => {
-        // success callback
-        this.menus = response.json();
-    }, response => {
-        // error callback
-    });
-
-    this.activeMenu = this.menus[0];
   }
 };
 </script>

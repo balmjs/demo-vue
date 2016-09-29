@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "The balm demo for vue project",
   "scripts": {
-    "preinstall": "bower install",
     "dev": "gulp",
     "prod": "gulp --production"
   },
@@ -18,14 +17,20 @@
     "url": "https://github.com/balmjs/balm-vue/issues"
   },
   "homepage": "https://github.com/balmjs/balm-vue#readme",
+  "dependencies": {
+    "vue": "^1.0.28",
+    "vue-i18n": "^4.6.0",
+    "vue-resource": "^1.0.3",
+    "vue-router": "^0.7.13"
+  },
   "devDependencies": {
-    "babel-plugin-transform-runtime": "^6.9.0",
-    "babel-preset-stage-2": "^6.11.0",
-    "balm": "^0.4.37",
+    "babel-plugin-transform-runtime": "^6.0.0",
+    "babel-preset-stage-2": "^6.0.0",
+    "balm": "^0.5.0-beta.6",
     "gulp": "^3.9.1",
     "vue-hot-reload-api": "^1.2.0",
-    "vue-html-loader": "^1.2.3",
-    "vue-loader": "^8.5.3",
+    "vue-html-loader": "^1.0.0",
+    "vue-loader": "^8.5.4",
     "vue-style-loader": "^1.0.0"
   }
 }

@@ -19,7 +19,7 @@
     height: 88px;
     border: 1px solid;
     border-radius: 50%;
-    @include transition(all .4s ease);
+    transition: all .4s ease;
     &:hover {
       box-shadow: 0 0 8px white;
     }

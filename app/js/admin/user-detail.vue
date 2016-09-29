@@ -12,7 +12,7 @@ export default {
       userId: 0
     }
   },
-  ready () {
+  created () {
     let userId = this.$route.params.id;
     this.userId = userId;
     console.log(this.userId);
