@@ -1,7 +1,7 @@
 <template>
-  <div>
-    用户详情<br>
-    用户ID：{{userId}}
+  <div class="user-detail">
+    <h4>用户详情</h4>
+    <p>用户ID：{{userId}}</p>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="content flexbox-child">
+  <div class="user-content">
     <router-view></router-view>
   </div>
 </template>

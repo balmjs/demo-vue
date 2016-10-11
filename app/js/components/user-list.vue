@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <h4>用户列表</h4>
+  <div class="user-list">
+    <h3>用户列表</h3>
     <ul>
-      <li v-for="user in users">
-        <a v-link="user.url">{{user.name}}</a>
-        <i class="fa fa-edit" @click="onEdit($index)">编辑</i>
-        <i class="fa fa-remove" @click="onDelete($index)">删除</i>
+      <li v-for="(user, index) in users">
+        <router-link :to="user.url">{{user.name}}</router-link>
+        <i class="fa fa-edit" @click="onEdit(index)">编辑</i>
+        <i class="fa fa-remove" @click="onDelete(index)">删除</i>
       </li>
     </ul>
   </div>

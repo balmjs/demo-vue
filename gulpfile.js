@@ -22,7 +22,10 @@ balm.config = {
     loaders: [{
       test: /\.vue$/,
       loader: 'vue'
-    }]
+    }],
+    alias: {
+      vue: 'vue/dist/vue.js' // https://github.com/vuejs-templates/webpack/issues/215
+    }
   },
   cache: true
 };

@@ -1,5 +1,5 @@
 <template>
-  <nav class="flexbox-child navigation">
+  <nav class="navigation flexbox-child">
     <header class="profile">
       <figure>
         <img class="avatar" :src="user.avatar" :alt="user.name">
@@ -10,7 +10,7 @@
     <div class="menu">
       <ul>
         <li v-for="menu in menus" :class="{'active': menu==activeMenu}" @click="switchMenu(menu)">
-            <a v-link="menu.state">{{ $t(menu.name) }}</a>
+          <router-link :to="menu.state">{{ $t(menu.name) }}</router-link>
         </li>
       </ul>
     </div>

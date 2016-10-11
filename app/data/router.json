@@ -1,22 +1,22 @@
 [{
-  "url": "/login",
-  "name": "login",
-  "component": "dashboard"
+  "path": "/",
+  "name": "home",
+  "component": "home"
 }, {
-  "url": "/dashboard",
+  "path": "/dashboard",
   "name": "dashboard",
   "component": "dashboard"
 }, {
-  "url": "/user",
+  "path": "/user",
   "name": "user",
   "component": "user",
-  "subRoutes": [{
-    "url": "/",
-    "name": "user",
+  "children": [{
+    "path": "list",
+    "name": "user.list",
     "component": "user-list"
   }, {
-    "url": "/detail/:id",
-    "name": "user",
+    "path": "detail/:id",
+    "name": "user.detail",
     "component": "user-detail"
   }]
 }]

@@ -3,7 +3,7 @@ import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 import VueI18n from 'vue-i18n';
 import App from './app';
-import startRouter from './routes/index';
+import init from './router/index';
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
@@ -20,23 +20,13 @@ Object.keys(locales).forEach(lang => {
   Vue.locale(lang, locales[lang]);
 });
 
-let router = new VueRouter({
-  hashbang: false
-});
+init(Vue, routes => {
+  const router = new VueRouter({
+    routes
+  });
 
-router.beforeEach(() => {
-  window.scrollTo(0, 0);
-});
-
-router.afterEach(transition => {
-  console.log('Successfully navigated to: ' + transition.to.path)
-});
-
-router.alias({
-  '/': '/login'
-});
-
-startRouter(Vue, routes => {
-  router.map(routes);
-  router.start(App, '#app');
+  new Vue({
+    router,
+    render: h => h(App)
+  }).$mount('#app');
 });

@@ -4,6 +4,6 @@
   "icon": "fa-home"
 }, {
   "name": "menu.userlist",
-  "state": "/user",
+  "state": "/user/list",
   "icon": "fa-user"
 }]

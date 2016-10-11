@@ -1,5 +1,5 @@
 <template>
-  <div class="flexbox-parent container">
+  <div class="container flexbox-parent">
     <navigation></navigation>
     <container></container>
   </div>
