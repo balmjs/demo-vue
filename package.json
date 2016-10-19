@@ -18,16 +18,16 @@
   },
   "homepage": "https://github.com/balmjs/balm-vue#readme",
   "dependencies": {
-    "vue": "^2.0.1",
+    "vue": "^2.0.3",
     "vue-i18n": "^4.6.0",
     "vue-resource": "^1.0.3",
-    "vue-router": "^2.0.0"
+    "vue-router": "^2.0.1"
   },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.0.0",
     "babel-preset-stage-2": "^6.0.0",
     "balm": "^0.5.1",
     "gulp": "^3.9.1",
-    "vue-loader": "^9.5.1"
+    "vue-loader": "^9.7.0"
   }
 }

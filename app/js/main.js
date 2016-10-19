@@ -25,6 +25,10 @@ init(Vue, routes => {
     routes
   });
 
+  router.afterEach((to, from) => {
+    document.querySelector('title').innerHTML = to.name;
+  });
+
   new Vue({
     router,
     render: h => h(App)

@@ -13,6 +13,7 @@
 
 <script>
 import api from '../config/api';
+import state from '../store/state';
 
 export default {
   data () {
@@ -23,21 +24,27 @@ export default {
     }
   },
   async created () {
-    this.users = [];
-
-    let response = await this.$http.get(api.user.getList);
-    this.users = response.body;
+    if (!state.users.length) {
+      let response = await this.$http.get(api.user.getList);
+      state.users = response.body;
+    }
+    this.users = state.users;
   },
   methods: {
+    setState() {
+      state.users = this.users;
+    },
     onEdit(index) {
       this.curIndex = index;
       this.curData = this.users[index];
       // after save
       this.users[index].name = this.curData.name + ' updated';
+      this.setState();
     },
     onDelete(index) {
       // after confirm
       this.users.splice(index, 1);
+      this.setState();
     }
   }
 };
