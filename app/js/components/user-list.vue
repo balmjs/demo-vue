@@ -26,7 +26,7 @@ export default {
   async created () {
     if (!state.users.length) {
       let response = await this.$http.get(api.user.getList);
-      state.users = response.body;
+      state.users = response.data;
     }
     this.users = state.users;
   },

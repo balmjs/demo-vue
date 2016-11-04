@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import VueResource from 'vue-resource';
+import axios from 'axios'; // retiring vue-resource
 import VueI18n from 'vue-i18n';
 import App from './app';
 import init from './router/index';
 
 Vue.use(VueRouter);
-Vue.use(VueResource);
+Vue.prototype.$http = axios;
 Vue.use(VueI18n);
 
 // ready translated locales

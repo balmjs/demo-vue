@@ -40,7 +40,7 @@ export default {
     this.menus = [];
 
     let response = await this.$http.get(api.global.getMenu);
-    this.menus = response.body;
+    this.menus = response.data;
 
     this.activeMenu = this.menus[0];
   },
