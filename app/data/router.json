@@ -9,14 +9,14 @@
 }, {
   "path": "/user",
   "name": "user",
-  "component": "user",
+  "component": "index",
   "children": [{
     "path": "list",
     "name": "user.list",
-    "component": "user-list"
+    "component": "list"
   }, {
     "path": "detail/:id",
     "name": "user.detail",
-    "component": "user-detail"
+    "component": "detail"
   }]
 }]

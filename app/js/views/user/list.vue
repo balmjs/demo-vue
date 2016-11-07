@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import api from '../config/api';
-import state from '../store/state';
+import api from '../../config/api';
+import state from '../../store/state';
 
 export default {
   data () {

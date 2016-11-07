@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import { lang } from '../config/lang';
-import api from '../config/api';
+import { lang } from '../../config/lang';
+import api from '../../config/api';
 
 export default {
   data () {

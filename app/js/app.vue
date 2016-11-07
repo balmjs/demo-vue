@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Navigation from './components/navigation';
-import Container from './components/container';
+import Navigation from './views/layouts/navigation';
+import Container from './views/layouts/container';
 
 export default {
   components: {
