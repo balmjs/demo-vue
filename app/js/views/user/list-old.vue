@@ -3,7 +3,7 @@
     <h3>用户列表</h3>
     <ul>
       <li v-for="(user, index) in users">
-        <router-link :to="user.url">{{user.name}}</router-link>
+        <router-link :to="'/user/detail/' + user.id">{{user.name}}</router-link>
         <i class="fa fa-edit" @click="onEdit(index)">编辑</i>
         <i class="fa fa-remove" @click="onDelete(index)">删除</i>
       </li>

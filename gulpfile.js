@@ -15,7 +15,7 @@ balm.config = {
   },
   scripts: {
     entry: {
-      common: ['vue', 'vue-router', 'axios', 'vue-i18n'],
+      common: ['vue', 'vue-router', 'vuex', 'axios', 'vue-i18n'],
       main: './app/js/main.js'
     },
     vendors: ['common'],

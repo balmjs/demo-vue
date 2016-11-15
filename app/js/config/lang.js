@@ -10,8 +10,8 @@ const lang = [{
 }];
 
 const locales = {
-  en: en,
-  cn: cn
+  en,
+  cn
 };
 
 export {
