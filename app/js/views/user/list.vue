@@ -1,50 +1,54 @@
 <template>
   <div class="user-list">
     <h3>用户列表</h3>
-    <ul>
-      <li v-for="(user, index) in users">
-        <router-link :to="user.url">{{user.name}}</router-link>
-        <i class="fa fa-edit" @click="onEdit(index)">编辑</i>
-        <i class="fa fa-remove" @click="onDelete(index)">删除</i>
-      </li>
-    </ul>
+    <p><router-link to="/user/create">新增用户</router-link></p>
+    <table v-if="users.length">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(user, index) in users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>
+            <router-link class="fa fa-edit" :to="'/user/detail/' + user.id">详情</router-link>
+            <i class="fa fa-remove" @click="onDelete(user)">删除</i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="no-data" v-else>暂无数据</p>
   </div>
 </template>
 
 <script>
-import api from '../../config/api';
-import state from '../../store/state';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  data () {
-    return {
-      curIndex: -1,
-      curData: {},
-      users: this.users
-    }
-  },
-  async created () {
-    if (!state.users.length) {
-      let response = await this.$http.get(api.user.getList);
-      state.users = response.data;
-    }
-    this.users = state.users;
+  computed: {
+    ...mapGetters({
+      users: 'allUsers'
+    })
   },
   methods: {
-    setState() {
-      state.users = this.users;
-    },
-    onEdit(index) {
-      this.curIndex = index;
-      this.curData = this.users[index];
-      // after save
-      this.users[index].name = this.curData.name + ' updated';
-      this.setState();
-    },
-    onDelete(index) {
-      // after confirm
-      this.users.splice(index, 1);
-      this.setState();
+    ...mapActions([
+      'deleteUser'
+    ]),
+    onDelete(user) {
+      if (confirm(`确定删除 ${user.name}`)) {
+        this.deleteUser(user);
+      }
+    }
+  },
+  created() {
+    if (this.$store.state.users.length) {
+      this.users = this.$store.state.users;
+    } else {
+      this.$store.dispatch('getAllUsers');
     }
   }
 };

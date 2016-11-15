@@ -1,5 +1,6 @@
-let data = {
-  users: {}
+const state = {
+  users: [],
+  currentUser: null
 };
 
-export default data;
+export default state;

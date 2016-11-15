@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import store from './store';
 import axios from 'axios'; // retiring vue-resource
 import VueI18n from 'vue-i18n';
 import App from './app';
@@ -31,6 +32,7 @@ init(Vue, routes => {
 
   new Vue({
     router,
+    store,
     render: h => h(App)
   }).$mount('#app');
 });
