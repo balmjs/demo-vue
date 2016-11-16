@@ -21,7 +21,7 @@ Object.keys(locales).forEach(lang => {
   Vue.locale(lang, locales[lang]);
 });
 
-init(Vue, routes => {
+init(routes => {
   const router = new VueRouter({
     routes
   });
@@ -35,4 +35,4 @@ init(Vue, routes => {
     store,
     render: h => h(App)
   }).$mount('#app');
-});
+}, axios);

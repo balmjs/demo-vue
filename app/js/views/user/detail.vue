@@ -1,11 +1,11 @@
 <template>
   <div class="user-detail">
-    <h4>用户详情</h4>
+    <h4>User Detail</h4>
     <div v-if="user">
       <p>ID：{{ user.id }}</p>
       <p>Name: <input type="text" v-model.trim="user.name" @keyup.enter="onUpdate"></p>
     </div>
-    <p class="no-data" v-else>暂无数据</p>
+    <p class="no-data" v-else>No data</p>
   </div>
 </template>
 

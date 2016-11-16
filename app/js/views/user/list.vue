@@ -1,7 +1,7 @@
 <template>
   <div class="user-list">
-    <h3>用户列表</h3>
-    <p><router-link to="/user/create">新增用户</router-link></p>
+    <h3>User list</h3>
+    <p><router-link to="/user/create">Add new user</router-link></p>
     <table v-if="users.length">
       <thead>
         <tr>
@@ -15,13 +15,13 @@
           <td>{{ user.id }}</td>
           <td>{{ user.name }}</td>
           <td>
-            <router-link class="fa fa-edit" :to="'/user/detail/' + user.id">详情</router-link>
-            <i class="fa fa-remove" @click="onDelete(user)">删除</i>
+            <router-link class="fa fa-edit" :to="'/user/detail/' + user.id">Detail</router-link>
+            <i class="fa fa-remove" @click="onDelete(user)">Delete</i>
           </td>
         </tr>
       </tbody>
     </table>
-    <p class="no-data" v-else>暂无数据</p>
+    <p class="no-data" v-else>No data</p>
   </div>
 </template>
 

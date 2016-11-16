@@ -5,7 +5,7 @@
         <img class="avatar" :src="user.avatar" :alt="user.name">
         <figcaption class="username">{{ $t('message.hello') }}, <span>{{ user.name }}</span>!</figcaption>
       </figure>
-      <p><a href="#">{{ $t('message.settings') }}</a> | <a href="#">{{ $t('message.exit') }}</a></p>
+      <p><a href="#">{{ $t('message.settings') }}</a> | <router-link to="/logout">{{ $t('message.exit') }}</router-link></p>
     </header>
     <div class="menu">
       <ul>

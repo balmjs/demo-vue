@@ -1,6 +1,6 @@
 <template>
   <div class="user-create">
-    <h3>新增用户</h3>
+    <h3>Create a new user</h3>
     <p><input type="text" v-model.trim="name" @keyup.enter="onCreate"></p>
   </div>
 </template>
