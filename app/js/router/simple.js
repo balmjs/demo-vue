@@ -1,9 +1,9 @@
-const Home = resolve => require(['../views/home'], resolve);
-const Dashboard = resolve => require(['../views/dashboard'], resolve);
-const UserIndex = r => require.ensure([], () => r(require('../views/user/index')), '/user');
-const UserList = r => require.ensure([], () => r(require('../views/user/list')), '/user');
-const UserCreate = r => require.ensure([], () => r(require('../views/user/create')), '/user');
-const UserDetail = r => require.ensure([], () => r(require('../views/user/detail')), '/user');
+const Home = require('../views/home');
+const Dashboard = require('../views/dashboard');
+const UserIndex = require('../views/user/index');
+const UserList = require('../views/user/list');
+const UserCreate = require('../views/user/create');
+const UserDetail = require('../views/user/detail');
 
 const routes = [{
   path: '/',

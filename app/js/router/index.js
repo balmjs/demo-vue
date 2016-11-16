@@ -14,4 +14,4 @@ const initSimple = fn => {
   fn(require('./simple').default);
 };
 
-export default init;
+export default initSimple;
