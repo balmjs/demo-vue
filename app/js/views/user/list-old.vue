@@ -30,12 +30,12 @@ export default {
     onEdit(index) {
       this.curIndex = index;
       this.curData = this.users[index];
-      // after save
+      // TODO: after save
       this.users[index].name = this.curData.name + ' updated';
       this.setState();
     },
     onDelete(index) {
-      // after confirm
+      // TODO: after confirm
       this.users.splice(index, 1);
       this.setState();
     }

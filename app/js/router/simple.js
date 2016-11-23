@@ -1,9 +1,10 @@
 const Home = require('../views/home');
 const Dashboard = require('../views/dashboard');
 const UserIndex = require('../views/user/index');
-const UserList = require('../views/user/list');
+const UserList = require('../views/user/list-old');
 const UserCreate = require('../views/user/create');
 const UserDetail = require('../views/user/detail');
+const Test = require('../views/test');
 
 const routes = [{
   path: '/',
@@ -30,6 +31,10 @@ const routes = [{
     name: 'user.detail',
     component: UserDetail
   }]
+}, {
+  path: '/test',
+  name: 'test',
+  component: Test
 }];
 
 export default routes;
