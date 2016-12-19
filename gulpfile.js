@@ -22,9 +22,13 @@ balm.config = {
     loaders: [{
       test: /\.vue$/,
       loader: 'vue'
+    }, {
+      test: /balm-ui.src.*?js$/,
+      loader: 'babel'
     }],
     alias: {
-      vue: 'vue/dist/vue.js' // https://github.com/vuejs-templates/webpack/issues/215
+      vue: 'vue/dist/vue.js', // https://github.com/vuejs-templates/webpack/issues/215
+      'balm-ui': 'balm-ui/src/index.js'
     }
   },
   cache: true

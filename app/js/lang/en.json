@@ -6,6 +6,7 @@
   },
   "menu": {
     "dashboard": "Dashboard",
-    "userlist": "User List"
+    "userlist": "User List",
+    "ui": "BalmUI Components"
   }
 }

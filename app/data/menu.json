@@ -6,4 +6,8 @@
   "name": "menu.userlist",
   "state": "/user/list",
   "icon": "fa-user"
+}, {
+  "name": "menu.ui",
+  "state": "/ui",
+  "icon": "fa-cogs"
 }]

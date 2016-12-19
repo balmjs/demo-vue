@@ -23,4 +23,8 @@
     "name": "user.detail",
     "component": "detail"
   }]
+}, {
+  "path": "/ui",
+  "name": "ui",
+  "component": "ui"
 }]

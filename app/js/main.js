@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import BalmUI from 'balm-ui';
 import store from './store';
 import axios from 'axios'; // retiring vue-resource
 import VueI18n from 'vue-i18n';
@@ -9,6 +10,7 @@ import init from './router/index';
 Vue.use(VueRouter);
 Vue.prototype.$http = axios;
 Vue.use(VueI18n);
+Vue.use(BalmUI);
 
 // ready translated locales
 import { locales } from './config/lang';
