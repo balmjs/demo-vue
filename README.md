@@ -3,6 +3,8 @@
 ```sh
 # 安装
 npm install
+# or
+yarn install
 
 # 开发
 npm run dev
@@ -11,4 +13,4 @@ npm run dev
 npm run prod
 ```
 
-__gg__
+__enjoy it__

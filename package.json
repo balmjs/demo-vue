@@ -19,8 +19,8 @@
   "homepage": "https://github.com/balmjs/balm-vue#readme",
   "dependencies": {
     "axios": "^0.15.3",
-    "balm-ui": "^0.1.2-beta",
-    "vue": "^2.1.6",
+    "balm-ui": "^0.1.8-beta",
+    "vue": "^2.1.8",
     "vue-i18n": "^4.9.0",
     "vue-router": "^2.1.1",
     "vuex": "^2.1.1"
@@ -28,9 +28,9 @@
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-preset-stage-2": "^6.18.0",
-    "balm": "^0.5.4",
+    "balm": "^0.5.6",
     "gulp": "^3.9.1",
     "vue-loader": "^10.0.2",
-    "vue-template-compiler": "^2.1.6"
+    "vue-template-compiler": "^2.1.8"
   }
 }

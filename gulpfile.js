@@ -1,6 +1,14 @@
 var balm = require('balm');
 
 balm.config = {
+  server: {
+    proxyTable: {
+      '/api': {
+        target: 'http://your.project.dev',
+        changeOrigin: true
+      }
+    }
+  },
   roots: {
     source: 'app'
   },
