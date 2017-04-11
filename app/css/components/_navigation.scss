@@ -29,30 +29,27 @@
   }
   // menu
   .menu {
+    ul {
+      margin: 0;
+      padding: 0;
+    }
     li {
-      a {
-        display: block;
-        padding: 20px;
-        i,
-        span {
-          vertical-align: middle;
-        }
-        i {
-          width: 30px;
-          margin-right: 10px;
-        }
-      }
+      list-style: none;
       &.active {
         background-color: #32373c;
       }
     }
-  }
-  // footer
-  .lang {
-    position: absolute;
-    right: 0;
-    bottom: 10px;
-    left: 0;
-    text-align: center;
+    a {
+      display: block;
+      padding: 20px;
+      i,
+      span {
+        vertical-align: middle;
+      }
+      i {
+        width: 30px;
+        margin-right: 10px;
+      }
+    }
   }
 }

@@ -1,5 +1,8 @@
 <template>
   <div class="demo-balmui">
+    <h2>
+      <a href="//balmjs.com/ui-vue/">BalmUI</a>
+    </h2>
     <ui-button effect>Button</ui-button>
     <hr>
     <ui-badge value="99+">Badge</ui-badge>
