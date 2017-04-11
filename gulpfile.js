@@ -1,14 +1,6 @@
 var balm = require('balm');
 
 balm.config = {
-  server: {
-    proxyTable: {
-      '/api': {
-        target: 'http://your.project.dev',
-        changeOrigin: true
-      }
-    }
-  },
   roots: {
     source: 'app'
   },
@@ -23,7 +15,7 @@ balm.config = {
   },
   scripts: {
     entry: {
-      common: ['vue', 'vue-router', 'vuex', 'axios', 'vue-i18n'],
+      common: ['vue', 'vue-router', 'vuex', 'axios'],
       main: './app/js/main.js'
     },
     vendors: ['common'],
@@ -35,7 +27,7 @@ balm.config = {
       loader: 'babel'
     }],
     alias: {
-      vue: 'vue/dist/vue.js', // https://github.com/vuejs-templates/webpack/issues/215
+      'vue': balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js',
       'balm-ui': 'balm-ui/src/index.js'
     }
   },

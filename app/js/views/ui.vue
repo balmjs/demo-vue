@@ -1,19 +1,8 @@
 <template>
   <div class="demo-balmui">
+    <ui-button effect>Button</ui-button>
+    <hr>
     <ui-badge value="99+">Badge</ui-badge>
-    <hr>
-    <ui-button>Button</ui-button>
-    <hr>
-    <ui-card border dp="2">
-      <template slot="title" scope="props">
-        <h2 :class="props.className.title">Card Title</h2>
-        <h3 :class="props.className.subtitle">Sub Title</h3>
-      </template>
-      <p slot="text">Card Text</p>
-      <p slot="actions">
-        <ui-button>Card Button</ui-button>
-      </p>
-    </ui-card>
     <hr>
     <ui-chip>Chip</ui-chip>
     <hr>
@@ -59,8 +48,8 @@
       </ui-panel>
     </ui-tabs>
     <hr>
-    <ui-loading isActive></ui-loading>
-    <ui-loading type="1" isActive></ui-loading>
+    <ui-loading active></ui-loading>
+    <ui-loading :type="1" active></ui-loading>
     <hr>
     <ui-menu name="menu2" :data="menus"></ui-menu>
     <hr>

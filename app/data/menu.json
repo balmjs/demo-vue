@@ -1,13 +1,13 @@
 [{
-  "name": "menu.dashboard",
+  "name": "首页",
   "state": "/dashboard",
   "icon": "fa-home"
 }, {
-  "name": "menu.userlist",
+  "name": "用户列表",
   "state": "/user/list",
   "icon": "fa-user"
 }, {
-  "name": "menu.ui",
+  "name": "BalmUI组件",
   "state": "/ui",
   "icon": "fa-cogs"
 }]

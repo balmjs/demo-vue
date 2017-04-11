@@ -1,11 +1,11 @@
 let useBackendRouter = false; // change it, as you wish
 
 // has auth
-const init = (fn, axios = '') => {
+const init = fn => {
   if (useBackendRouter) {
-    require('./back-end')(fn, axios);
+    require('./back-end').default(fn);
   } else {
-    require('./front-end')(fn);
+    fn(require('./front-end').default);
   }
 };
 

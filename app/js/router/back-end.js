@@ -1,6 +1,7 @@
+import axios from 'axios';
 import { baseRoutes, requireAuth } from './base';
 
-const backEndRouter = (fn, axios) => {
+const backEndRouter = fn => {
   axios.get('/data/router.json').then(response => {
     let subRoutes = [];
 
@@ -12,16 +13,16 @@ const backEndRouter = (fn, axios) => {
       };
 
       if (typeof value1.children !== 'undefined') {
-        switch (value1.path) { // TODO: The 3rd argument of require.ensure has bug
+        switch (value1.path) {
           case '/user':
-            route.component = r => require.ensure([], () => r(require('../views/user/' + value1.component)), '/user');
+            route.component = resolve => require(['../views/user/' + value1.component], resolve);
 
             route.children = [];
             for (let value2 of value1.children) {
               let subRoute = {
                 path: value2.path,
                 name: value2.name,
-                component: r => require.ensure([], () => r(require('../views/user/' + value2.component)), '/user')
+                component: resolve => require(['../views/user/' + value2.component], resolve)
               };
               route.children.push(subRoute);
             }
@@ -42,4 +43,4 @@ const backEndRouter = (fn, axios) => {
   });
 };
 
-module.exports = backEndRouter;
+export default backEndRouter;

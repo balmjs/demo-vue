@@ -3,31 +3,26 @@
     <header class="profile">
       <figure>
         <img class="avatar" :src="user.avatar" :alt="user.name">
-        <figcaption class="username">{{ $t('message.hello') }}, <span>{{ user.name }}</span>!</figcaption>
+        <figcaption class="username">Hello, <span>{{ user.name }}</span>!</figcaption>
       </figure>
-      <p><a href="#">{{ $t('message.settings') }}</a> | <router-link to="/logout">{{ $t('message.exit') }}</router-link></p>
+      <p><a href="#">Settings</a> | <router-link to="/logout">Exit</router-link></p>
     </header>
     <div class="menu">
       <ul>
         <li v-for="menu in menus" :class="{'active': menu==activeMenu}" @click="switchMenu(menu)">
-          <router-link :to="menu.state">{{ $t(menu.name) }}</router-link>
+          <router-link :to="menu.state">{{ menu.name }}</router-link>
         </li>
       </ul>
     </div>
-    <footer class="lang">
-      <a href="javascript:void(0)" @click="switchLang(lang[1]['key'])">{{ lang[1]['value'] }}</a> | <a href="javascript:void(0)" @click="switchLang(lang[0]['key'])">{{ lang[0]['value'] }}</a>
-    </footer>
   </nav>
 </template>
 
 <script>
-import { lang } from '../../config/lang';
 import api from '../../config/api';
 
 export default {
   data () {
     return {
-      lang: lang,
       user: {
         avatar: require('../../../images/logo.png'),
         name: 'Alice'
@@ -47,9 +42,6 @@ export default {
   methods: {
     switchMenu(menu) {
       this.activeMenu = menu;
-    },
-    switchLang(lang) {
-      this.$root.$lang.lang = lang;
     }
   }
 };
