@@ -6,8 +6,10 @@ balm.config = {
   },
   paths: {
     source: {
-      css: 'css',
-      js: 'js'
+      css: 'styles',
+      js: 'scripts',
+      img: 'images',
+      font: 'fonts'
     }
   },
   styles: {
@@ -16,7 +18,7 @@ balm.config = {
   scripts: {
     entry: {
       common: ['vue', 'vue-router', 'vuex', 'axios'],
-      main: './app/js/main.js'
+      main: './app/scripts/main.js'
     },
     vendors: ['common'],
     loaders: [{
