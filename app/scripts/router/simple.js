@@ -4,7 +4,6 @@ const UserIndex = require('../views/user/index');
 const UserList = require('../views/user/list-old');
 const UserCreate = require('../views/user/create');
 const UserDetail = require('../views/user/detail');
-const UI = require('../views/ui');
 
 const routes = [{
   path: '/',
@@ -31,10 +30,6 @@ const routes = [{
     name: 'user.detail',
     component: UserDetail
   }]
-}, {
-  path: '/ui',
-  name: 'ui',
-  component: UI
 }];
 
 export default routes;

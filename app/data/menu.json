@@ -6,8 +6,4 @@
   "name": "用户列表",
   "state": "/user/list",
   "icon": "fa-user"
-}, {
-  "name": "BalmUI组件",
-  "state": "/ui",
-  "icon": "fa-cogs"
 }]

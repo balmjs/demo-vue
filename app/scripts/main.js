@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import BalmUI from 'balm-ui';
 import store from './store';
 import axios from 'axios'; // retiring vue-resource
 import App from './app';
@@ -8,7 +7,6 @@ import init from './router/index';
 
 Vue.use(VueRouter);
 Vue.prototype.$http = axios;
-Vue.use(BalmUI);
 
 init(routes => {
   const router = new VueRouter({
