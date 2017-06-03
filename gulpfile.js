@@ -20,7 +20,6 @@ balm.config = {
       common: ['vue', 'vue-router', 'vuex', 'axios'],
       main: './app/scripts/main.js'
     },
-    vendors: ['common'],
     loaders: [{
       test: /\.vue$/,
       loader: 'vue'
