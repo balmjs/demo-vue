@@ -23,13 +23,9 @@ balm.config = {
     loaders: [{
       test: /\.vue$/,
       loader: 'vue'
-    }, {
-      test: /balm-ui.src.*?js$/,
-      loader: 'babel'
     }],
     alias: {
-      'vue': balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js',
-      'balm-ui': 'balm-ui/src/index.js'
+      'vue': balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js'
     }
   },
   cache: true
