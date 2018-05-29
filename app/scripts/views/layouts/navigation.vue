@@ -21,17 +21,17 @@
 import api from '../../config/api';
 
 export default {
-  data () {
+  data() {
     return {
       user: {
-        avatar: require('../../../images/logo.png'),
+        avatar: require('../../assets/logo.png'),
         name: 'Alice'
       },
       menus: this.menus,
       activeMenu: null
-    }
+    };
   },
-  async created () {
+  async created() {
     this.menus = [];
 
     let response = await this.$http.get(api.global.getMenu);

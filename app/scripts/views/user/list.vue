@@ -11,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(user, index) in users">
+        <tr v-for="(user, index) in users" :key="index">
           <td>{{ user.id }}</td>
           <td>{{ user.name }}</td>
           <td>
@@ -35,9 +35,7 @@ export default {
     })
   },
   methods: {
-    ...mapActions([
-      'deleteUser'
-    ]),
+    ...mapActions(['deleteUser']),
     onDelete(user) {
       if (confirm(`确定删除 ${user.name}`)) {
         this.deleteUser(user);
@@ -45,9 +43,7 @@ export default {
     }
   },
   created() {
-    if (this.$store.state.users.length) {
-      this.users = this.$store.state.users;
-    } else {
+    if (!this.users.length) {
       this.$store.dispatch('getAllUsers');
     }
   }

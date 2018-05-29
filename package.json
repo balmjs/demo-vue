@@ -16,16 +16,17 @@
     "url": "https://github.com/balmjs/balm-vue/issues"
   },
   "dependencies": {
-    "axios": "^0.16.0",
-    "vue": "^2.3.0",
-    "vue-router": "^2.3.0",
-    "vuex": "^2.3.0"
+    "axios": "^0.18.0",
+    "vue": "^2.5.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
-    "babel-preset-stage-2": "^6.22.0",
-    "balm": "^0.15.2",
+    "babel-eslint": "^8.2.3",
+    "babel-preset-stage-2": "^6.24.1",
+    "balm": "^0.22.0",
     "gulp": "^3.9.1",
-    "vue-loader": "^12.0.0",
-    "vue-template-compiler": "^2.3.0"
+    "vue-loader": "^14.2.2",
+    "vue-template-compiler": "^2.5.0"
   }
 }

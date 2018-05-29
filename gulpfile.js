@@ -20,12 +20,14 @@ balm.config = {
       common: ['vue', 'vue-router', 'vuex', 'axios'],
       main: './app/scripts/main.js'
     },
-    loaders: [{
-      test: /\.vue$/,
-      loader: 'vue'
-    }],
+    loaders: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      }
+    ],
     alias: {
-      'vue': balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js'
+      vue$: 'vue/dist/vue.esm.js'
     }
   },
   cache: true
