@@ -36,7 +36,7 @@ balm.config = {
 };
 
 balm.go(mix => {
-  if (balm.config.production) {
+  if (balm.config.isProd) {
     mix.copy('./app/data/*', './dist/data');
   }
 });
