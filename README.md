@@ -1,15 +1,27 @@
-## BalmJS demo - Vue
+# BalmJS demo - Vue
+
+## Installing Balm
 
 ```sh
 yarn install
 # OR
 npm install
-
-# For development
-npm run dev
-
-# For production
-npm run prod
 ```
 
-__enjoy it__
+## :ghost: Enjoy
+
+For development
+
+```sh
+yarn run dev
+# OR
+npm run dev
+```
+
+For production
+
+```sh
+yarn run prod
+# OR
+npm run prod
+```

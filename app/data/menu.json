@@ -1,9 +1,0 @@
-[{
-  "name": "首页",
-  "state": "/dashboard",
-  "icon": "fa-home"
-}, {
-  "name": "用户列表",
-  "state": "/user/list",
-  "icon": "fa-user"
-}]

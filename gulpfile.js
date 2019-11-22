@@ -5,20 +5,12 @@ balm.config = {
   roots: {
     source: 'app'
   },
-  paths: {
-    source: {
-      css: 'styles',
-      js: 'scripts',
-      img: 'images',
-      font: 'fonts'
-    }
-  },
   styles: {
-    ext: 'scss'
+    extname: 'scss'
   },
   scripts: {
     entry: {
-      common: ['vue', 'vue-router', 'vuex', 'axios'],
+      lib: ['vue'],
       main: './app/scripts/main.js'
     },
     loaders: [
@@ -32,11 +24,9 @@ balm.config = {
       vue$: 'vue/dist/vue.esm.js'
     }
   },
-  cache: true
+  assets: {
+    cache: true
+  }
 };
 
-balm.go(mix => {
-  if (balm.config.isProd) {
-    mix.copy('./app/data/*', './dist/data');
-  }
-});
+balm.go();
