@@ -5,3 +5,4 @@ npm-debug.log
 selenium-debug.log
 .tmp
 ./assets
+yarn.lock
